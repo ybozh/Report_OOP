@@ -30,5 +30,9 @@ public class TripReportAvance {
 			this.costPayCorpCard = costPayCorpCard;
 		}
 	}
+	
+	public int getReportId () {
+		return reportId;
+	}
 
 }

@@ -1,27 +1,64 @@
 package MainClasses;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Object[] name = new Object[10];
+		TripReportAvance[] name = new TripReportAvance[3];
 		
-		TripReportAvance tra = new TripReportAvance(1, "125", "569", "874");
-		TripReportAvance tra1 = new TripReportAvance(21, "1225", "5269", "8274");
+		//TripReportAvance tra = new TripReportAvance(1, "125", "569", "874");
+		//TripReportAvance tra1 = new TripReportAvance(21, "1225", "5269", "8274");
+		
+		name[0] = new TripReportAvance(1, "125", "569", "874");
+		name[1] = new TripReportAvance(178, "1798925", "52135469", "86674");
+		
+		System.out.println(name[1].dateOfReport);
+		
 		
 		ArrayList<TripReportAvance> list = new ArrayList<TripReportAvance>();
-		list.add(tra);
-		list.add(tra1);
 		
 		
-		System.out.println(list.get(0).reportId);
-		System.out.println(list.get(1).reportId);
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).dateOfReport);
+		}
 		
 		
-		System.out.println(list.get(0).nameOfEngineer);
-		System.out.println(list.get(1).nameOfEngineer);
+		
+		Scanner in = new Scanner(System.in);
+        System.out.print("¬ведите им€: ");
+        String name1 = in.nextLine();
+        System.out.print("¬ведите им€2: ");
+        String name2 = in.nextLine();
+		
+		System.out.println(name1 + " " + name2);
+		
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+		String f;			
+		do {			
+			int a = list.size() + 1;
+			System.out.print("String codeName");
+	        String b = in.nextLine();
+	        System.out.print("String dateOfReport");
+	        String c = in.nextLine();
+	        System.out.print("String nameOfEngineer");
+	        String d = in.nextLine();
+	        
+	        
+	        TripReportAvance tra = new TripReportAvance(a, b, c, d);
+	        
+	        list.add(tra);
+	        
+	        System.out.println(list.size());
+	        
+	        System.out.print("More? Y/N");
+	        f = in.nextLine();
+	        
+		} while (f.contains("Y"));
+		
+		
 		
 
 	}
